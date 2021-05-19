@@ -1,34 +1,34 @@
-import junit.framework.TestCase;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
-public class CalculatorTest extends TestCase {
-    Calculator cal;
+import static org.junit.Assert.*;
 
-    @Override
-    protected void setUp() throws Exception {
+public class CalculatorTest {
+    private Calculator cal;
+
+    @Before
+    public void setup() {
         cal = new Calculator();
-        System.out.println("setUp!");
+        System.out.println("setup!");
     }
 
-    public void testAdd() {
-        System.out.println("testAdd!");
-        int result = cal.add(2,1);
-        assertEquals(3, result);
+    @Test
+    public void add() {
+        assertEquals(3, cal.add(2,1));
+        System.out.println("add!");
     }
 
-    public void testSub() throws Exception {
-        System.out.println("testSub!");
-        int result = cal.subtract(2,1);
-        assertEquals(1, result);
+    @Test
+    public void divide() {
+        assertEquals(3, cal.divide(9,3));
+        System.out.println("divide!");
+
     }
 
-    public void testMul() throws Exception {
-        System.out.println("testMul!");
-        int result = cal.multiply(3,2);
-        assertEquals(6, result);
+    @After
+    public void teardown() {
+        System.out.println("teardown!");
     }
 
-    @Override
-    protected void tearDown() throws Exception {
-        System.out.println("tearDown");
-    }
 }
