@@ -20,6 +20,12 @@ public class CalculatorTest {
     }
 
     @Test
+    public void subtract() {
+        assertEquals(1, cal.subtract(2,1));
+        System.out.println("subtract!");
+    }
+
+    @Test
     public void divide() {
         assertEquals(3, cal.divide(9,3));
         System.out.println("divide!");
